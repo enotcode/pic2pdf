@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>pic2pdf</title>
 </head>
 <body>
-    <h1>Download your pdf</h1>
-    <p>Download <a href="{{ url_for('uploaded_file', filename=fname) }}">{{ fname }}</a></p>
+<p style="color: #fff">Download your pdf: <a href="{{ url_for('uploaded_file', filename=fname) }}">{{ fname }}</a></p>
 </body>
 </html>
