@@ -22,8 +22,6 @@ def converter(images):
     for i in images:
         pdf.add_page()
         pdf.image(i, x=10, y=8, w=190)
-        pdf.set_font('Arial', size=12)
-        pdf.ln(85)
     name = name_generator() + '.pdf'
     pdf.output('uploads/' + name)
     return name
