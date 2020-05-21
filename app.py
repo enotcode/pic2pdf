@@ -27,7 +27,3 @@ def upload_file():
 def uploaded_file(filename):
     return send_from_directory('uploads/',
                                filename)
-
-
-if __name__ == '__main__':
-    app.run()
