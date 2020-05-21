@@ -11,16 +11,16 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        files = request.files.getlist("file[]")
+        files = request.files.getlist('file[]')
         if files and allowed(files):
             images = []
             for file in files:
                 filename = secure_filename(file.filename)
                 file.save(os.path.join('uploads/', filename))
                 images.append('uploads/' + filename)
-            converter(images)
+            fname = converter(images)
             return redirect(url_for('uploaded_file',
-                                    filename='test.pdf'))
+                                    filename=fname))
     return '''
     <!doctype html>
     <title>Upload new File</title>
