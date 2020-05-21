@@ -2,13 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>pic2pdf</title>
 </head>
 <body>
-    <h1>Upload new File</h1>
-    <form action="" method=post enctype=multipart/form-data>
-        <p><input type=file name="file[]" multiple="">
-            <input type=submit value=Upload>
+<div class="upload">
+    <form action="/" method="post" enctype="multipart/form-data">
+        <div class="upload-files">
+            <header>
+                <p>
+                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                    <span class="pic">pic 2</span>
+                    <span class="pdf">pdf</span>
+                </p>
+            </header>
+            <div class="body" id="drop">
+                <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                <p class="pointer-none"><b>Drag and drop</b> files here <br/> or <a href="" id="triggerFile">browse</a>
+                    to
+                    begin the upload</p>
+                <input type="file" name="file[]" multiple="multiple"/>
+            </div>
+            <footer>
+                <div class="divider">
+                    <span><AR>FILES</AR></span>
+                </div>
+                <div class="list-files">
+                    <!--   template   -->
+                </div>
+                <button type="submit" class="importar">UPLOAD</button>
+            </footer>
+        </div>
     </form>
+</div>
 </body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </html>
